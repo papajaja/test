@@ -1,0 +1,13 @@
+@import "./Variables.scss";
+
+.settings {
+  margin-top: 45px;
+  height: $toolbar-height;
+  background-color: white;
+  box-shadow: 0px 4px 5px gray;
+  display: flex;
+  align-items: center;
+  position: absolute;
+  width: 100vw;
+  z-index: 10;
+}

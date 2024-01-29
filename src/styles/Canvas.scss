@@ -1,0 +1,21 @@
+@import "./Variables.scss";
+
+.canvas {
+  display: flex;
+  // background-color: gray;
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background-color: $background_color;
+}
+
+canvas {
+  background-color: white;
+  border: 1px black solid;
+  z-index: 11;
+  &:hover {
+    cursor: crosshair;
+  }
+}

@@ -1,0 +1,8 @@
+[] - Кольца
+[] - Anti - broking
+[] - Фигуры
+[] - Динамическое расположение элементов
+[] - Заливка
+[] - Low / end graphics
+// letter-spacing, border-left/right, inputBox:foxus/valid, transform
+[] - Приближение/отдаление холста
