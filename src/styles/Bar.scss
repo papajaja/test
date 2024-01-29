@@ -1,0 +1,23 @@
+@import "./Variables.scss";
+
+.bar {
+  display: flex;
+  justify-content: center;
+  height: $bar-height + 10px;
+  width: 100vw;
+  background-color: transparent;
+}
+
+.inner-bar {
+  height: $bar-height + 10px;
+  border-radius: 0px 0px $panel-bordering $panel-bordering;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0px 4px 5px gray;
+  justify-content: space-evenly;
+  display: flex;
+  // position: absolute;
+  width: 1000px;
+  z-index: 11;
+  display: flex;
+  // justify-content: space-between;
+}

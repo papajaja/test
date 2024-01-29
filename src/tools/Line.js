@@ -3,6 +3,7 @@ import Tool from "./Tool";
 export default class Line extends Tool {
   constructor(canvas) {
     super(canvas);
+    this.name = "line";
     this.listen();
     this.mouseDown = false;
   }
@@ -44,7 +45,6 @@ export default class Line extends Tool {
       this.context.beginPath();
       this.context.moveTo(startX, startY);
       this.context.lineTo(x, y);
-      this.context.lineWidth = 2;
       this.context.stroke();
     };
   }

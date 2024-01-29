@@ -3,6 +3,7 @@ import Tool from "./Tool";
 export default class Rect extends Tool {
   constructor(canvas) {
     super(canvas);
+    this.name = "rect";
     this.listen();
     this.mouseDown = false;
   }
@@ -47,7 +48,6 @@ export default class Rect extends Tool {
       this.context.drawImage(image, 0, 0, this.canvas.width, this.canvas.height);
       this.context.beginPath();
       this.context.rect(x, y, w, h);
-      this.context.lineWidth = 2;
       this.context.stroke();
     };
   }

@@ -1,13 +1,105 @@
 @import "./Variables.scss";
 
 .settings {
-  margin-top: 45px;
-  height: $toolbar-height;
-  background-color: white;
-  box-shadow: 0px 4px 5px gray;
+  // background-color: rgba(0, 0, 0, 0.15);
+  width: $panel-width;
+  justify-content: center;
   display: flex;
   align-items: center;
-  position: absolute;
-  width: 100vw;
-  z-index: 10;
+  height: $bar-height;
+  flex-wrap: wrap;
+  .redo {
+    background: url("../images/redo.svg") no-repeat center center;
+  }
+  .undo {
+    background: url("../images/undo.svg") no-repeat center center;
+  }
+  .save {
+    background: url("../images/save.svg") no-repeat center center;
+  }
+}
+
+.toolsettings {
+  flex-wrap: wrap;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  width: $panel-width;
+  height: $bar-height;
+  // background-color: rgba(0, 0, 0, 0.15);
+  .palette {
+    border: none;
+    background: url("../images/palette.svg") no-repeat center center;
+    .colors {
+      height: 35px;
+      width: 25px;
+      border: none;
+      outline: none;
+      // border-radius: 50%;
+      background-color: transparent;
+      appearance: none;
+      opacity: 0%;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+
+  .tool-scale {
+    margin-left: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .slider {
+      appearance: none;
+      background-color: rgba(118, 118, 118, 0.581);
+      width: 170px;
+      height: 10px;
+      border-radius: 20px;
+    }
+
+    .slider::-webkit-slider-thumb {
+      appearance: none;
+      background-color: $toolscale-color;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+    .tool-scale-triangle {
+      // background-color: rgb(65, 22, 85);
+      width: 10px;
+      border-top: 8px solid transparent;
+      border-bottom: 8px solid transparent;
+      border-right: 5px solid $toolscale-color;
+      height: 10px;
+      margin-left: 5px;
+    }
+    .tool-scale-rectangle {
+      width: 40px;
+      display: flex;
+      color: white;
+      justify-content: center;
+      align-items: center;
+      font-family: cursive;
+      font-size: 12px;
+      height: 22px;
+      border-radius: 3px;
+      background-color: $toolscale-color;
+    }
+  }
+}
+.cross {
+  margin: 0 7px;
+  height: 25px;
+  width: 25px;
+  border: none;
+  outline: none;
+  background-size: cover;
+  &:hover {
+    cursor: pointer;
+  }
+  background: url("../images/cross.svg") no-repeat center center;
 }

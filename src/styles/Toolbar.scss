@@ -1,197 +1,57 @@
 @import "./Variables.scss";
 
 .toolbar {
-  height: $toolbar-height;
-  background-color: white;
-  box-shadow: 0px 4px 5px gray;
+  height: $bar-height;
+  // background-color: rgba(0, 0, 0, 0.15);
   display: flex;
   align-items: center;
-  position: absolute;
   justify-content: center;
-  width: 100vw;
-  z-index: 11;
-
+  margin: 0 5px;
+  width: $panel-width;
+  flex-wrap: wrap;
   &__btn {
+    margin: 0 7px;
     height: 25px;
     width: 25px;
     border: none;
     outline: none;
     background-size: cover;
-    margin-left: 16px;
     &:hover {
       cursor: pointer;
     }
   }
-
   .brush {
     background: url("../images/brush.svg") no-repeat center center;
-    &.pseudo {
-      &::after {
-        content: "";
-        pointer-events: all;
-        position: absolute;
-        background-color: $selected-color;
-
-        border-radius: 10px;
-        top: 1.5px; /* Расположение верхней границы за пределами блока */
-        left: 10px; /* Расположение левой границы за пределами блока */
-        border: 1px solid black; /* Стиль границы */
-        width: 34px;
-        height: 34px;
-      }
-    }
   }
-
   .circle {
-    &.pseudo {
-      &::after {
-        content: "";
-        pointer-events: all;
-        background-color: $selected-color;
-
-        position: absolute;
-        border-radius: 10px;
-        top: 1.5px; /* Расположение верхней границы за пределами блока */
-        left: 92px; /* Расположение левой границы за пределами блока */
-        border: 1px solid black; /* Стиль границы */
-        width: 34px;
-        height: 34px;
-      }
-    }
     background: url("../images/circle.svg") no-repeat center center;
   }
-
   .eraser {
-    &.pseudo {
-      &::after {
-        content: "";
-        background-color: $selected-color;
-
-        pointer-events: all;
-        position: absolute;
-        border-radius: 10px;
-        top: 1.5px; /* Расположение верхней границы за пределами блока */
-        left: 173px; /* Расположение левой границы за пределами блока */
-        border: 1px solid black; /* Стиль границы */
-        width: 34px;
-        height: 34px;
-      }
-    }
     background: url("../images/eraser.svg") no-repeat center center;
   }
-
-  .colors {
-    height: 30px;
-    width: 30px;
-    border: none;
-    border-radius: 50%;
-    background-color: white;
+  .pencil {
+    background: url("../images/pencil.svg") no-repeat center center;
   }
-
+  .cross {
+    background: url("../images/cross.svg") no-repeat center center;
+  }
   .line {
-    &.pseudo {
-      &::after {
-        content: "";
-        background-color: $selected-color;
-
-        pointer-events: all;
-        position: absolute;
-        border-radius: 10px;
-        top: 1.5px; /* Расположение верхней границы за пределами блока */
-        left: 215px; /* Расположение левой границы за пределами блока */
-        border: 1px solid black; /* Стиль границы */
-        width: 34px;
-        height: 34px;
-      }
-    }
     background: url("../images/line.svg") no-repeat center center;
   }
-
   .rect {
-    &.pseudo {
-      &::after {
-        content: "";
-        background-color: $selected-color;
-        pointer-events: all;
-        position: absolute;
-        border-radius: 10px;
-        top: 1.5px; /* Расположение верхней границы за пределами блока */
-        left: 51px; /* Расположение левой границы за пределами блока */
-        border: 1px solid black; /* Стиль границы */
-        width: 34px;
-        height: 34px;
-      }
-    }
-    background: url("../images/rectangle-svgrepo-com.svg") no-repeat center center;
+    background: url("../images/rect.svg") no-repeat center center;
   }
-
-  .redo {
-    background: url("../images/redo.svg") no-repeat center center;
-  }
-
-  .undo {
-    background: url("../images/undo.svg") no-repeat center center;
-    margin-left: auto;
-  }
-
-  .save {
-    background: url("../images/save.svg") no-repeat center center;
-    margin-right: 16px;
-  }
-
   .clear {
     background: url("../images/document-clean-svgrepo-com.svg") no-repeat center center;
   }
-
   .fill {
-    background: url("../images/paint-tool-svgrepo-com.svg") no-repeat center center;
-    &.pseudo {
-      &::after {
-        background-color: $selected-color;
-
-        content: "";
-        pointer-events: all;
-        position: absolute;
-        border-radius: 10px;
-        top: 1.5px; /* Расположение верхней границы за пределами блока */
-        left: 256px; /* Расположение левой границы за пределами блока */
-        border: 1px solid black; /* Стиль границы */
-        width: 34px;
-        height: 34px;
-      }
-    }
+    background: url("../images/fill.svg") no-repeat center center;
   }
-
   .rings {
-    background: url("../images/circle.svg") no-repeat center center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    &.pseudo {
-      &::after {
-        content: "";
-        pointer-events: all;
-        background-color: $selected-color;
-
-        position: absolute;
-        border-radius: 10px;
-        top: 1.5px; /* Расположение верхней границы за пределами блока */
-        left: 133px; /* Расположение левой границы за пределами блока */
-        border: 1px solid black; /* Стиль границы */
-        width: 34px;
-        height: 34px;
-      }
-    }
-
-    // width: 50px;
-    // font-variant: small-caps;
-    // font-family: cursive;
-    // font-size: 15px;
-    // font-weight: 600;
-    // border-radius: 10px;
-    // display: flex;
-    // justify-content: center;
-    // align-items: center;
+    background: url("../images/rings.svg") no-repeat center center;
+  }
+  .tree {
+    background: url("../images/tree.svg") no-repeat center center;
   }
 }
 

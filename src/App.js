@@ -1,16 +1,14 @@
 import React from "react";
-import Toolbar from "./components/Toolbar";
 import "./styles/App.scss";
-import Settings from "./components/Settings";
 import Canvas from "./components/Canvas";
+import Bar from "./components/Bar";
 
 const App = () => {
   return (
-    <div>
-      <Toolbar></Toolbar>
-      <Settings></Settings>
+    <>
+      {/* <Bar></Bar> */}
       <Canvas></Canvas>
-    </div>
+    </>
   );
 };
 

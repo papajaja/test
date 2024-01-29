@@ -3,6 +3,7 @@ import Tool from "./Tool";
 export default class Rings extends Tool {
   constructor(canvas) {
     super(canvas);
+    this.name = "rings";
     this.listen();
     this.mouseDown = false;
   }
@@ -42,7 +43,6 @@ export default class Rings extends Tool {
     // this.timeout = setTimeout(() => {
     this.context.beginPath();
     this.context.arc(x, y, Math.abs(w), 0, 2 * Math.PI);
-    this.context.lineWidth = 2;
     this.context.stroke();
     // }, 10);
   }

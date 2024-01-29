@@ -2,9 +2,8 @@
 
 .canvas {
   display: flex;
-  // background-color: gray;
+  flex-direction: column;
   position: absolute;
-  justify-content: center;
   align-items: center;
   width: 100vw;
   height: 100vh;
@@ -12,9 +11,10 @@
 }
 
 canvas {
+  margin-top: 5vh;
   background-color: white;
-  border: 1px black solid;
-  z-index: 11;
+  // border: 1px rgba(0, 0, 0, 0.397) solid;
+  box-shadow: 0px 0px 10px rgb(128, 128, 128);
   &:hover {
     cursor: crosshair;
   }

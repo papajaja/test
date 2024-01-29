@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import "../styles/Toolbar.scss";
 import toolState from "../store/toolState";
 import Brush from "../tools/Brush";
 import canvasState from "../store/canvasState";
@@ -8,7 +7,10 @@ import Rect from "../tools/Rect";
 import Circle from "../tools/Circle";
 import Line from "../tools/Line";
 import Rings from "../tools/Rings";
-import Tool from "../tools/Tool";
+import "../styles/Toolbar.scss";
+import Cross from "../tools/Cross";
+import Pencil from "../tools/Pencil";
+import Tree from "../tools/Tree";
 
 const Toolbar = () => {
   const [selectedTool, setSelectedTool] = useState(null);
@@ -18,7 +20,6 @@ const Toolbar = () => {
     setSelectedTool(toset);
     toset.classList.add("pseudo");
   };
-  console.log(toolState.tool instanceof Brush);
   return (
     <div className="toolbar">
       <button
@@ -26,6 +27,13 @@ const Toolbar = () => {
         onClick={() => {
           settool("brush");
           toolState.setTool(new Brush(canvasState.canvas));
+        }}
+      ></button>
+      <button
+        className="toolbar__btn pencil"
+        onClick={() => {
+          settool("pencil");
+          toolState.setTool(new Pencil(canvasState.canvas));
         }}
       ></button>
       <button
@@ -43,17 +51,19 @@ const Toolbar = () => {
         }}
       ></button>
       <button
+        className="toolbar__btn tree"
+        onClick={() => {
+          settool("tree");
+          toolState.setTool(new Tree(canvasState.canvas));
+        }}
+      ></button>
+      <button
         className="toolbar__btn rings"
         onClick={() => {
           settool("rings");
           toolState.setTool(new Rings(canvasState.canvas));
         }}
-      >
-        <div className=" rings1">
-          <div className="rings2"></div>
-        </div>
-        {/* Rings */}
-      </button>
+      ></button>
       <button
         className="toolbar__btn eraser"
         onClick={() => {
@@ -78,21 +88,38 @@ const Toolbar = () => {
       <button
         className="toolbar__btn clear"
         onClick={() => {
+          canvasState.pushToUndo(canvasState.canvas.toDataURL());
           canvasState.context.clearRect(0, 0, canvasState.canvas.width, canvasState.canvas.height);
         }}
       ></button>
-
-      <input
-        onChange={(event) => {
-          // console.log(event.target.value);
-          toolState.setStrokeColor(event.target.value);
+      <button
+        className="toolbar__btn cross"
+        onClick={() => {
+          settool("cross");
+          toolState.setTool(new Cross(canvasState.canvas));
         }}
-        type="color"
-        className="toolbar__btn colors"
-      ></input>
-      <button className="toolbar__btn undo"></button>
-      <button className="toolbar__btn redo"></button>
-      <button className="toolbar__btn save"></button>
+      ></button>
+      <button
+        className="toolbar__btn cross"
+        onClick={() => {
+          settool("cross");
+          toolState.setTool(new Cross(canvasState.canvas));
+        }}
+      ></button>
+      <button
+        className="toolbar__btn cross"
+        onClick={() => {
+          settool("cross");
+          toolState.setTool(new Cross(canvasState.canvas));
+        }}
+      ></button>
+      <button
+        className="toolbar__btn cross"
+        onClick={() => {
+          settool("cross");
+          toolState.setTool(new Cross(canvasState.canvas));
+        }}
+      ></button>
     </div>
   );
 };

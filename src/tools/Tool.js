@@ -1,9 +1,11 @@
+import toolState from "../store/toolState";
+
 export default class Tool {
   constructor(canvas) {
     this.canvas = canvas;
     this.context = canvas.getContext("2d");
     this.destroyEvents();
-    // console.log("destroyed");
+    this.context.lineWidth = toolState.lineWidth;
   }
 
   set strokeColor(color) {
@@ -16,6 +18,14 @@ export default class Tool {
 
   set lineWidth(width) {
     this.context.lineWidth = width;
+  }
+
+  set lineCap(cap) {
+    this.context.lineCap = cap;
+  }
+
+  set lineJoin(join) {
+    this.context.lineJoin = join;
   }
 
   destroyEvents() {
