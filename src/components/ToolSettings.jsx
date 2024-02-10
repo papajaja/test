@@ -19,7 +19,7 @@ const ToolSettings = () => {
           className="slider"
           type="range"
           min={1}
-          max={100}
+          max={40}
           onChange={(event) => {
             setValue(event.target.value);
           }}
